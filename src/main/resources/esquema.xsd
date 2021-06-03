@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.com/lachamba" xmlns:tns="http://www.example.com/lachamba" elementFormDefault="qualified">
+    <element name="NuevoEmpleadoRequest">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+                <element name="apellido_paterno" type="string"></element>
+                <element name="apellido_materno" type="string"></element>
+                <element name="correo" type="string"></element>
+                <element name="cargo" type="string"></element>
+                <element name="salario_mensual" type="decimal"></element>
+                <element name="hora_entrada" type="int"></element>
+                <element name="hora_salida" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="NuevoEmpleadoResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="EmpleadosRegistradosRequest">
+        <complexType/>
+    </element>
+
+    <element name="EmpleadosRegistradosResponse">
+        <complexType>
+            <sequence>
+                <element name="empleado" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="id" type="int"></element>
+                            <element name="nombre" type="string"></element>
+                            <element name="apellido_paterno" type="string"></element>
+                            <element name="apellido_materno" type="string"></element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="EliminarEmpleadoRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="EliminarEmpleadoResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="ActualizarEmpleadoRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="correo" type="string"></element>
+                <element name="cargo" type="string"></element>
+                <element name="salario_mensual" type="decimal"></element>
+                <element name="hora_entrada" type="int"></element>
+                <element name="hora_salida" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ActualizarEmpleadoResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BuscarEmpleadoRequest">
+        <complexType>
+            <sequence>
+                <element name="cargo" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="BuscarEmpleadoResponse">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
